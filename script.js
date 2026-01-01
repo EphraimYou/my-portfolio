@@ -34,7 +34,7 @@ const slider = document.querySelector('.img-slider');
 const sliderWidth = slider.offsetWidth;
 let index = 0;
 const activePortfolio = () => {
-    slider.style.transform = `translateX(calc( ${index * -100}% - ${index * 1}rem))`;
+    slider.style.transform = `translateX(calc( ${index * -100}% - ${index * 2}rem))`;
     const portfolioDetails = document.querySelectorAll('.portfolio-details');
     portfolioDetails.forEach(detail => {
         detail.classList.remove('active');
@@ -43,18 +43,18 @@ const activePortfolio = () => {
 }
 
 arrowRight.addEventListener('click', () => {
-    if (index < 2) {
+    if (index < 5) {
         index++;
         arrowLeft.classList.remove('disabled');
     } else {
-        index = 3;
+        index = 6;
         arrowRight.classList.add('disabled');
     }
     activePortfolio();
 });
 
 arrowLeft.addEventListener('click', () => {
-    if (index > 1) {
+    if (index > 0) {
         index--;
         arrowRight.classList.remove('disabled');
     } else {
